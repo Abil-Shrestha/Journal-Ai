@@ -1,1 +1,1 @@
-**JournalAi*
+**JournalAi**
