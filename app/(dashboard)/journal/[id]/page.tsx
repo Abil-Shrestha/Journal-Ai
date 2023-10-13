@@ -40,7 +40,7 @@ const EntryPage = async ({ params }: any) => {
                         {analysisData.map((item) => (
                             <li
                                 key={item.name}
-                                className="flex items-center justify-between px-2 py-4 border-b border-t border-black/10"
+                                className="flex items-center justify-between px-2 py-4 border-b border-t border-black/10 "
                             >
                                 <span className='text-lg font-semibold '>{item.name}</span>
                                 <span>{item.value} </span>
