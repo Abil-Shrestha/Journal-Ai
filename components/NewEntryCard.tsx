@@ -6,7 +6,7 @@ const NewEntryCard = () => {
   const router = useRouter()
 
   const handleClick = async() => {
-    const data = await createNewEntry()
+    const { data } = await createNewEntry()
     router.push(`/journal/${data.id}`)
   }
   return (

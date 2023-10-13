@@ -3,7 +3,6 @@ import EntryCard from '@/components/EntryCard'
 import { getUserByClerkID } from '@/utils/auth'
 import { prisma } from '@/utils/db'
 import Link from 'next/link'
-import { analyse } from '@/utils/ai.ts'
 
 
 const getEntries = async () => {
@@ -16,9 +15,6 @@ const getEntries = async () => {
       createdAt: 'desc'
     }
   })
-  console.log(
-    await analyse('Today was a great day.I went to the beach and ate a lot of ice cream.')
-  )
   return entries
 }
 const JournalPage = async () => {

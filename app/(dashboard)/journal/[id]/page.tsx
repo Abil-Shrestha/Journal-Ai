@@ -18,7 +18,6 @@ const getEntry = async (id: string) => {
 
 const EntryPage = async ({ params }: any) => {
     const entry = await getEntry(params.id)
-
     const analysisData = [
         { name: 'Summary', value: '' },
         { name: 'Subject', value: '' },
@@ -28,7 +27,7 @@ const EntryPage = async ({ params }: any) => {
     return (
         <div className='h-full w-full grid grid-cols-3'>
             <div className='col-span-2'>
-                <Editor entry={entry} />
+               { entry ? <Editor entry={entry} /> : <p> Loading...</p> }
             </div>
             <div className="border-l border-black/10">
                 <div className='bg-purple-300 px-6 py-10'>

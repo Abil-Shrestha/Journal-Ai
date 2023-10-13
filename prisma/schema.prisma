@@ -48,6 +48,8 @@ model Analysis {
   summary  String  @db.Text
   color    String
   negative Boolean
+  subject  String
+  sentimentScore Float
 
   @@unique([entryId])
 }

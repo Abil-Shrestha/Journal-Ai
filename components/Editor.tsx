@@ -8,7 +8,6 @@ import { useAutosave } from 'react-autosave';
 const Editor = ({entry}:any) => {
     const [value, setValue] = useState(entry.content)
     const [isLoading, setIsLoading] = useState(false)
-
     useAutosave({
         data: value,
         onSave: async (_value) => {
