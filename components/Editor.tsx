@@ -2,6 +2,7 @@
 import { updateEntry } from '@/utils/api';
 import { useState } from 'react'
 import { useAutosave } from 'react-autosave';
+import Spinner from './Spinner';
 
 
 
@@ -30,7 +31,7 @@ const Editor = ({entry}:any) => {
     return (
         <div className="w-full h-full grid grid-cols-3 gap-0 relative">
             <div className="col-span-2">
-            {isLoading && <div className="text-xl outline-none"> Loading...</div>}
+            {isLoading && <div className="text-xl mt-10 outline-none flex items-center justify-center"> <Spinner /></div>}
             <textarea
                 className="w-full h-full p-8 text-xl outline-none"
                 value={value}
