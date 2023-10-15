@@ -8,7 +8,8 @@ import { useAutosave } from 'react-autosave';
 const Editor = ({entry}:any) => {
     const [value, setValue] = useState(entry.content)
     const [isLoading, setIsLoading] = useState(false)
-    const { mood , summary, color, subject, negative } = entry?.analysis
+    const [ai,setAi] = useState(entry.analysis)
+    const { mood , summary, color, subject, negative } = ai
     const analysisData = [
         { name: 'Summary', value: summary },
         { name: 'Subject', value: subject },
@@ -20,7 +21,8 @@ const Editor = ({entry}:any) => {
         data: value,
         onSave: async (_value) => {
             setIsLoading(true)
-            updateEntry(entry.id, _value)
+            const data  = await updateEntry(entry.id, _value)
+            setAi(data.analysis)
             setIsLoading(false)
         }
     })
@@ -33,7 +35,6 @@ const Editor = ({entry}:any) => {
                 className="w-full h-full p-8 text-xl outline-none"
                 value={value}
                 onChange={e => setValue(e.target.value)} />
-
             </div>
             <div className="border-l border-black/10">
                 <div className=' px-6 py-10' style={{backgroundColor: color}}>
