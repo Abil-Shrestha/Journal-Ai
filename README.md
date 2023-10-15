@@ -1,1 +1,1 @@
-**JournalAi**
+**NextJs||PlanetScale||Prisma||LangChain||OpenAI||Clerk**
