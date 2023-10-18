@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const links =[
         {href:'/', label: 'Home'},
-        {href:'/', label: 'Journal'}
+        {href:'/journal', label: 'Journal'}
 ]
 
 

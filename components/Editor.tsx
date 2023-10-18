@@ -38,6 +38,7 @@ const Editor = ({entry}:any) => {
                 onChange={e => setValue(e.target.value)} />
             </div>
             <div className="border-l border-black/10">
+                {console.log(color)}
                 <div className=' px-6 py-10' style={{backgroundColor: color}}>
                     <p>AI Summary</p>
                 </div>
