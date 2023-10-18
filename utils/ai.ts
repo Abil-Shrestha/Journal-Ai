@@ -48,8 +48,8 @@ export const analyse = async(prompt:any) => {
     }
 }
 
-const qa = async (question, entries) => {
-    const docs = entries.map (entry => {
+export const qa = async (question, entries) => {
+    const docs = entries.map ((entry) => {
         return new Document({
             pageContent: entry.content,
             metadata: {id: entry.id, createdAt: entry.createdAt}
@@ -61,7 +61,7 @@ const qa = async (question, entries) => {
     const store = await MemoryVectorStore.fromDocuments(docs,embeddings)
     const relevantDocs = await store.similaritySearch(question)
     const res = await chain.call({
-        input_documnets:relevantDocs,
+        input_documents: relevantDocs,
         question,
     })
 
