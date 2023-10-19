@@ -10,6 +10,7 @@ import { MemoryVectorStore } from 'langchain/vectorstores/memory'
 
 const parser = StructuredOutputParser.fromZodSchema(
     z.object({
+        sentinentScore:z.number().describe('sentiment of the text and rated on a scale from -10 to 10, where -10 is extremely negative, 0 is neutral, and 10 is extremely positive.'),
         mood:z.string().describe('The mood of the person who wrote this journal.'),
         subject:z.string().describe('The subject of this Journal Entry.'),
         color:z.string().describe('The hexadecimal code for color matching the mood of the entry. Green for happy, Red for unhappy and somewhere in between for neutral. For negative summaries always return Red.'),
