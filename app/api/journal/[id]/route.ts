@@ -26,6 +26,7 @@ export const PATCH = async(req:Request,{params}:any) => {
             entryId:updatedEntry.id,
         },
         create:{
+            userId:user.id,
             entryId:updatedEntry.id,
             ...analysis,
         },
